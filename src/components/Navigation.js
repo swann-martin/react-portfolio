@@ -21,7 +21,7 @@ const Navigation = () => {
           </li>
           <li>
             <NavLink exact to="/knowledges" activeClassName="navActive">
-              <i className="fas fa-mountain"></i> <span>Compétences</span>
+              <i className="fas fa-brain"></i> <span>Compétences</span>
             </NavLink>
           </li>
           <li>
@@ -76,16 +76,16 @@ const Navigation = () => {
               <i className="fab fa-codepen"></i>
             </a>
           </li>
-          <div className="signature">
-            <a
-              href="http://swannwho.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              swann - 2021
-            </a>
-          </div>
         </ul>
+        <div className="signature">
+          <a
+            href="http://swannwho.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            swann - 2021
+          </a>
+        </div>
       </div>
     </div>
   );

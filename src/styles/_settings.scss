@@ -45,28 +45,27 @@ li {
 
 a {
   text-decoration: none;
-  color: $black;
+  color: inherit;
   &:visited {
-    color: $black;
+    color: inherit;
   }
-
-  .home,
-  .knowledges,
-  .porfolio,
-  .contact {
-    display: flex;
-    @media screen and (max-width: 850px) {
-      display: block !important;
-    }
+}
+.home,
+.knowledges,
+.porfolio,
+.contact {
+  display: flex;
+  @media screen and (max-width: 850px) {
+    display: block !important;
   }
+}
 
-  .homeContent,
-  .knowledgeContent,
-  .portfoliocontent,
-  .contactContent {
-    margin-left: 4rem;
-    @media screen and (max-width: 850px) {
-      margin-left: 0 !important;
-    }
+.homeContent,
+.knowledgeContent,
+.portfoliocontent,
+.contactContent {
+  margin-left: 4rem;
+  @media screen and (max-width: 850px) {
+    margin-left: 0 !important;
   }
 }
