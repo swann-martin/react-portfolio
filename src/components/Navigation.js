@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import avatar from '../media/swann.jpg';
+import cv from '../media/CVSwannMartin.pdf';
 
 const Navigation = () => {
   return (
