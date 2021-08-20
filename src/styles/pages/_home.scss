@@ -1,15 +1,15 @@
 .home {
+  border-radius: $borderRadius;
   .homeContent {
     background: linear-gradient(115deg, $color-1 50%, transparent 100%);
     min-height: $min-height;
     width: 100%;
     min-height: 500px;
-    border-radius: $borderRadius;
     position: relative;
     overflow: hidden;
-
+    border-radius: $borderRadius;
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       height: 100%;
       width: inherit;
@@ -22,30 +22,31 @@
       left: 13%;
       font-family: $font-1;
 
-      h1 {
+      &-title {
         font-size: 5rem;
         font-family: $font-3;
         color: $color-5;
         text-transform: uppercase;
         text-shadow: 3px 6px 2px $black;
       }
-      h2 {
+      &-subtitle {
         font-size: 2.5rem;
         padding: 1.5rem 0 7rem;
         color: $color-3;
         text-shadow: 1px 4px 1px $black;
       }
-      .pdf {
-        a {
+      &-pdf {
+        z-index: 1111;
+        &-link {
           font-size: 1.5rem;
           background: $color-3;
           padding: 1rem 2rem;
           border-radius: $borderRadius;
           box-shadow: 0 5px 1px rgb(15, 15, 15);
           transition: 0.2s ease;
-
           &:hover {
-            background: $color-4;
+            background-color: $color-4;
+            transform: scale(1.2);
           }
         }
       }

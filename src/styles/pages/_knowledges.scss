@@ -1,5 +1,6 @@
 .knowledges {
   .knowledgesContent {
+    margin-left: 1rem;
     min-height: $min-height;
     width: 100%;
     position: relative;
@@ -41,6 +42,7 @@
         margin-bottom: 0.3rem;
       }
       .years {
+        margin-top: 2.5rem;
         font-size: 0.65rem;
         display: flex;
         justify-content: space-between;
