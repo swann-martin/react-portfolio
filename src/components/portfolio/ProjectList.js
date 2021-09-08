@@ -1,55 +1,52 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { portfolioData } from "../../data/portfolioData";
 import Project from "./Project";
 
-export default class ProjectList extends Component {
-  state = {
-    projects: portfolioData,
-    radios: [
-      { id: 1, value: "javascript" },
-      { id: 2, value: "react" },
-      { id: 3, value: "typescript" },
-      { id: 4, value: "php" },
-    ],
-    selectedRadio: "javascript",
-  };
+const ProjectList = () => {
+  const [projects, setProjects] = useState(portfolioData);
+  const [radios, setRadios] = useState([
+    { id: 1, value: "javascript" },
+    { id: 2, value: "react" },
+    { id: 3, value: "typescript" },
+    { id: 4, value: "php" },
+  ]);
 
-  handleRadio = (event) => {
-    let radio = event.target.value;
-    this.setState({ selectedRadio: radio });
-  };
+  const [selectedRadio, setSelectedRadio] = useState("javascript"),
 
-  render() {
-    let { projects, radios, selectedRadio } = this.state;
 
-    return (
-      <div className="portfolioContent">
-        <ul className="radioDisplay">
-          {radios.map((radio) => {
-            return (
-              <li key={radio.id}>
-                <input
-                  type="radio"
-                  name="radio"
-                  checked={radio.value === selectedRadio}
-                  value={radio.value}
-                  id={radio.value}
-                  onChange={this.handleRadio}
-                />
-                <label htmlFor={radio.value}>{radio.value}</label>
-              </li>
-            );
+    handleRadio = (event) => {
+      let radio = event.target.value;
+      setSelectedRadio(radio);
+    };
+
+  return (
+    <div className="portfolioContent">
+      <ul className="radioDisplay">
+        {radios.map((radio) => {
+          return (
+            <li key={'radio' + radio.id}>
+              <input
+                type="radio"
+                name="radio"
+                checked={radio.value === selectedRadio}
+                value={radio.value}
+                id={radio.value}
+                onChange={handleRadio}
+              />
+              <label htmlFor={radio.value}>{radio.value}</label>
+            </li>
+          );
+        })}
+      </ul>
+
+      <div className="projects">
+        {projects
+          .filter((item) => item.languages.includes(selectedRadio))
+          .map((item) => {
+            return <Project key={item.id} item={item} />;
           })}
-        </ul>
-
-        <div className="projects">
-          {projects
-            .filter((item) => item.languages.includes(selectedRadio))
-            .map((item) => {
-              return <Project key={item.id} item={item} />;
-            })}
-        </div>
       </div>
-    );
-  }
+    </div >
+  );
 }
+export default ProjectList;
